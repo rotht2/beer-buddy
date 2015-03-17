@@ -64,4 +64,20 @@ public class BeerController implements BeerMapper {
 //				.collect(Collectors.toList());
 //		return new PageImpl<BeerDTO>(dtos);
 	}
+	
+	@Description("Returns a search list that matches the string of the search")
+	@RequestMapping(value={"/search/{key}" }, method=GET)
+	public Page<Beer> getBeersBySearch(
+			@PathVariable String key,
+			@RequestParam(defaultValue="0", required=false) int page,
+			@RequestParam(defaultValue="10", required=false) int size) {
+		Order order = new Order(Direction.ASC, "name");
+		Sort sort = new Sort(order);
+		Pageable pageable = new PageRequest(page, size, sort);
+		return beerRepository.findByType(key, pageable);
+//		List<BeerDTO> dtos = beer.getContent().stream()
+//				.map(this)
+//				.collect(Collectors.toList());
+//		return new PageImpl<BeerDTO>(dtos);
+	}
 }

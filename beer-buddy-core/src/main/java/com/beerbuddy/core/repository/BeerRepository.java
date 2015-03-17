@@ -15,4 +15,6 @@ public interface BeerRepository extends JpaRepository<Beer, Long> {
 	public List<String> findTypes();
 	
 	public Page<Beer> findByType(String type, Pageable page);
+	
+	public Page<Beer> findBySearch(String searchKey, Pageable page);
 }
