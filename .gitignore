@@ -1,3 +1,11 @@
 
 beer-buddy-web/target
+beer-buddy-web/.settings
+beer-buddy-web/.project
+beer-buddy/target
+beer-buddy/.settings
+beer-buddy/.project
+beer-buddy-core/target
+beer-buddy-core/.settings
+beer-buddy-core/.project
 beer-buddy-web/database
